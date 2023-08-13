@@ -20,6 +20,7 @@ texture = ExtResource("1_3v4gk")
 
 [node name="Platform" parent="Environment/Moving" instance=ExtResource("2_dgsxi")]
 
-[node name="Player" parent="." instance=ExtResource("3_uti2c")]
+[node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("3_uti2c")]
 position = Vector2(-150, -150)
 scale = Vector2(0.4, 0.4)
+camera = NodePath("../Camera2D")

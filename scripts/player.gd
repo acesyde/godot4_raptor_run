@@ -4,6 +4,7 @@ extends CharacterBody2D
 # Exported values
 @export var gravity : int = 1600
 @export var jump_power : int = 600
+@export var camera: Camera2D
 
 # OnReady values
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -22,6 +23,9 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	
 	if active:
+		# Update the camera position
+		camera.position = position
+		
 		# Reset the player after landing
 		if was_jumping and is_on_floor():
 			was_jumping = false
