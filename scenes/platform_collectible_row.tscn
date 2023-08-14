@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cicc0ngx68hcp"]
+
+[ext_resource type="Script" path="res://scripts/platform.gd" id="1_7s6li"]
+[ext_resource type="Texture2D" uid="uid://jp703hs05fvr" path="res://assets/sprites/Platform/platform.png" id="2_tljsv"]
+[ext_resource type="PackedScene" uid="uid://b0kgpjj2caf3k" path="res://scenes/collectible.tscn" id="3_i2rvs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arb56"]
+size = Vector2(380, 40)
+
+[node name="Platform" type="StaticBody2D"]
+script = ExtResource("1_7s6li")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tljsv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_arb56")
+
+[node name="Collectible" parent="." instance=ExtResource("3_i2rvs")]
+position = Vector2(0, -96)
+scale = Vector2(0.3, 0.3)

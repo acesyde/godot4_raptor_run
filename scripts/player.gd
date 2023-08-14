@@ -16,10 +16,10 @@ var jumps_remaining: int = 2
 var was_jumping: bool = false
 var jump_pitch: float = 1.0
 
-func _ready():
+func _ready() -> void:
 	print("hello world")
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	velocity.y += gravity * delta
 	
 	if active:
